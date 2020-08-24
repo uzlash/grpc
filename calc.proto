@@ -1,0 +1,42 @@
+syntax ="proto3";
+
+package calculator;
+
+service CalculatorService {
+    rpc Add(AddRequest) returns (AddResponse){}
+    rpc Cub(CubReq) returns (CubRes){}
+    rpc Hel(HelReq) returns (HelRes){}
+    rpc Rand(RandReq) returns (RandRes){}
+};
+
+
+message AddRequest {
+    required int32 a=1;
+    required int32 b=2;
+}
+
+message AddResponse {
+    int32 c=1;
+}
+
+message CubReq {
+    required int32 x=1;
+}
+
+message CubRes {
+    int32 y=1;
+}
+
+message HelReq {
+    required string name=1;
+}
+
+message HelRes {}
+
+message RandReq{
+    string n=1;
+}
+
+message RandRes {
+    repeated int32 r=1;
+}
